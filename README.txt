@@ -34,3 +34,22 @@ Notes:
 - The bootloader starts at address 0x08000000 and can be 4k in size 
 (right now its around 2.5k)
 
+--------------------------------------------
+-- STM32 Bootloader Updater
+--
+-- Johannes Hübner <dev@johanneshuebner.com>
+--------------------------------------------
+
+To be able to upgrade the boot loader code without a JTAG programmer an
+upgrade application was developed. It follows the same protocol as the
+boot loader but with different timing:
+
+1. Keep printing "2" until magic and a page count <= 4 is received
+2. Do the update process except the received pages are written to base address 0x08000000
+3. Wait for "reset" command
+
+To upgrade the bootloader, do the following, either using the web interface
+or the python script
+1. Send file stm32_bootupdater.bin
+2. Send file stm32_loader.bin
+3. Send file stm32_sine.bin

@@ -137,6 +137,7 @@ int main(void)
       } while (magic != BOOTLOADER_MAGIC);
 
       usart_send_blocking(TERM_USART, 'S');
+      wait();
       numPages = usart_recv(TERM_USART);
    } while (numPages == 0 || numPages > 4);
 
@@ -201,7 +202,6 @@ int main(void)
 
       for (startIdx = 0; startIdx < (sizeof(cmdBuffer) - 5) && cmdBuffer[startIdx] != 'r'; startIdx++);
    }
-
 
    usart_disable(TERM_USART);
    scb_reset_system();
