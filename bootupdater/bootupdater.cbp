@@ -35,7 +35,7 @@
 		<Unit filename="stm32_bootupdater.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stm32_loader.ld" />
+		<Unit filename="stm32_bootupdater.ld" />
 		<Extensions>
 			<code_completion />
 			<debugger />
