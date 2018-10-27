@@ -57,13 +57,15 @@ or the python script
 --------------------------------------------
 -- Compiling
 --------------------------------------------
-The only external depedency if libopencm3 which I forked.
 You will need the arm-none-eabi toolchain: https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads
+The only external depedency is libopencm3 which I forked. You can download and build this dependency by typing
 
-Compile libopencm3 and copy the output to your compiler directory.
-Example: if compiler resides in /home/user/bin/gcc-arm
-cp -r include/libopencm3 /home/user/bin/gcc-arm/arm-none-eabi/include
-cp lib/libopencm3_stm32f1.a /home/user/bin/gcc-arm/arm-none-eabi/lib
+make get-deps
 
-Now you can compile stm32-loader and stm32-bootupdater and upload it to your board using a
-JTAG/SWD adapter, the updater.py script or the esp8266 web interface
+Now you can compile stm32-loader and stm32-bootupdater by typing
+
+make
+cd bootupdater
+make
+
+And upload it to your board using a JTAG/SWD adapter, the updater.py script or the esp8266 web interface
