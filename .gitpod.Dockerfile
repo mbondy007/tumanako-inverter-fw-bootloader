@@ -2,7 +2,7 @@ FROM gitpod/workspace-full
                     
 USER root
 
-RUN apt-get update && apt-get install -y gcc-arm-none-eabi
+RUN sudo apt-get update && apt-get install -y gcc-arm-none-eabi
 
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
